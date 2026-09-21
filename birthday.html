@@ -1,0 +1,787 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Bunda Tersayang ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #0d1020;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* =========================
+   OPENING
+========================= */
+
+#opening {
+    background:
+        radial-gradient(circle at center,
+        rgba(255, 215, 130, 0.15),
+        transparent 40%),
+        #0d1020;
+    text-align: center;
+}
+
+.opening-content {
+    max-width: 700px;
+}
+
+.small-text {
+    font-size: 18px;
+    letter-spacing: 4px;
+    opacity: 0.7;
+    margin-bottom: 25px;
+}
+
+.opening-title {
+    font-size: clamp(40px, 8vw, 80px);
+    margin-bottom: 40px;
+    background: linear-gradient(
+        90deg,
+        #fff,
+        #ffd98a,
+        #fff
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 4s infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.open-button {
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    padding: 17px 35px;
+    border-radius: 50px;
+    font-size: 17px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+}
+
+.open-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255,215,130,0.2);
+    box-shadow: 0 10px 40px rgba(255,215,130,0.2);
+}
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+#birthday {
+    display: none;
+    text-align: center;
+    background:
+        radial-gradient(circle at center,
+        rgba(255, 195, 100, 0.12),
+        transparent 50%),
+        #11152a;
+}
+
+.birthday-content {
+    max-width: 900px;
+}
+
+.emoji {
+    font-size: 70px;
+    margin-bottom: 20px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 85px);
+    margin-bottom: 25px;
+}
+
+.gold {
+    color: #ffd98a;
+}
+
+.subtitle {
+    font-size: 22px;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+/* =========================
+   MEMORY
+========================= */
+
+#memories {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    background: #11152a;
+}
+
+.section-title {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.photo {
+    height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: linear-gradient(
+        135deg,
+        #292d48,
+        #171a2d
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,0.5);
+    transition: 0.5s;
+}
+
+.photo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+#letter {
+    display: none;
+    background:
+        radial-gradient(circle at center,
+        rgba(255, 200, 120, 0.08),
+        transparent 50%),
+        #0d1020;
+}
+
+.letter {
+    max-width: 800px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 50px;
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 30px 100px rgba(0,0,0,0.3);
+}
+
+.letter h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 35px;
+    color: #ffd98a;
+}
+
+.letter-text {
+    font-size: 20px;
+    line-height: 2;
+    color: rgba(255,255,255,0.85);
+}
+
+.signature {
+    margin-top: 40px;
+    text-align: right;
+    font-style: italic;
+    color: #ffd98a;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+#final {
+    display: none;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,215,130,0.2),
+            transparent 50%
+        ),
+        #090b16;
+}
+
+.final-content {
+    max-width: 800px;
+}
+
+.final-content h2 {
+    font-size: clamp(35px, 6vw, 65px);
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.final-message {
+    font-size: 22px;
+    line-height: 2;
+    opacity: 0.8;
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    z-index: 999;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 240px;
+    }
+
+    .letter {
+        padding: 30px 22px;
+    }
+
+    .letter-text {
+        font-size: 17px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- STARS -->
+<div class="stars" id="stars"></div>
+
+
+<!-- =========================
+     OPENING
+========================= -->
+
+<section id="opening">
+
+    <div class="opening-content">
+
+        <div class="small-text">
+            A LITTLE SURPRISE FOR YOU
+        </div>
+
+        <div class="opening-title">
+            Ada sesuatu untuk Bunda...
+        </div>
+
+        <button class="open-button" onclick="openGift()">
+            🎁 Buka Hadiah
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BIRTHDAY
+========================= -->
+
+<section id="birthday">
+
+    <div class="birthday-content">
+
+        <div class="emoji">
+            🎂
+        </div>
+
+        <h1>
+            Selamat Ulang Tahun
+            <br>
+            <span class="gold">Bunda ❤️</span>
+        </h1>
+
+        <p class="subtitle" id="typing"></p>
+
+        <br><br>
+
+        <button class="open-button" onclick="showSection('memories')">
+            📸 Lihat Kenangan
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section id="memories">
+
+    <h2 class="section-title">
+        Beberapa Kenangan ❤️
+    </h2>
+
+    <p class="section-description">
+        Karena terlalu banyak cerita indah untuk dimasukkan ke dalam satu halaman.
+    </p>
+
+    <div class="gallery">
+
+        <!--
+        GANTI BAGIAN INI DENGAN FOTO KALIAN
+
+        Contoh:
+
+        <div class="photo">
+            <img src="foto1.jpg">
+        </div>
+        -->
+
+        <div class="photo">
+            <img src="Alghi.jpg" >
+        </div>
+
+        <div class="photo">
+            <img src="bareng.jpg" >
+        </div>
+
+        <div class="photo">
+            <img src="bunda.jpg" >
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <button class="open-button"
+            onclick="showSection('letter')">
+        💌 Ada Surat Untuk Bunda
+    </button>
+
+</section>
+
+
+<!-- =========================
+     LETTER
+========================= -->
+
+<section id="letter">
+
+    <div class="letter">
+
+        <h2>
+            Untuk Bunda❤️
+        </h2>
+
+        <div class="letter-text" id="letterText">
+
+            Happy birthday Bunda.
+
+            <br><br>
+
+           Selamat ulang tahun, bunda💗😍. Semoga bunda sehat selaluu, panjang umur, dimudahkan semua urusannya, dan selalu diberi kebahagiaan. Aamiin💗.
+
+            <br><br>
+
+           Terima kasih bunda, sudah jadi bunda yang selalu berusaha buat kami, yang diam-diam banyak berkorban tanpa banyak cerita. alghi mungkin nggak selalu bilang, tapi alghi sangat bangga dan bersyukur punya bunda seperti bunda💗🫂.
+
+            <br><br>
+
+            Doa alghi, semoga semua kebaikan bunda dibalas berlipat, rezeki bunda dilancarkan, dan bunda selalu dalam lindungan Allah. Semoga alghi juga bisa jadi anak yang bisa membanggakan bunda. Aamiin☺️🤩.
+
+            <br><br>
+
+            Selamat ulang tahun, bunda💗😍. Semoga tahun ini dan kedepannya membawa banyak hal baik buat bunda. Aamiin🫂.
+
+            <br><br>
+
+            <strong>
+            
+            </strong>
+
+            <br><br>
+
+            
+
+            <br><br>
+
+            
+
+            <br><br>
+
+            
+
+            <div class="signature">
+
+                Dengan penuh sayang,<br>
+                Alghi ❤️
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div style="text-align:center">
+
+            <button class="open-button"
+                    onclick="showSection('final'); startConfetti();">
+
+                ✨ Lanjut
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section id="final">
+
+    <div class="final-content">
+
+        <div style="font-size:80px;">
+            ❤️
+        </div>
+
+        <h2>
+
+            Selamat Ulang Tahun,
+            <span class="gold">
+                Bunda
+            </span>
+
+        </h2>
+
+        <p class="final-message">
+
+            Semoga setiap langkah ke depan
+            selalu diiringi kesehatan,
+            kebahagiaan,
+            dan banyak alasan untuk tersenyum.
+
+            <br><br>
+
+            Terima kasih telah menjadi
+            orang tua terbaik yang pernah Alghi punya.
+
+            <br><br>
+
+            <strong>
+                    Alghi sayang Bunda.
+            </strong>
+
+        </p>
+
+        <br>
+
+        <div style="font-size:45px;">
+            🎂 🎉 ❤️ 🌟
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   CREATE STARS
+========================= */
+
+const starsContainer = document.getElementById("stars");
+
+for(let i = 0; i < 120; i++){
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    starsContainer.appendChild(star);
+}
+
+
+/* =========================
+   OPEN GIFT
+========================= */
+
+function openGift(){
+
+    document.getElementById("opening")
+        .style.display = "none";
+
+    document.getElementById("birthday")
+        .style.display = "flex";
+
+    startTyping();
+
+}
+
+
+/* =========================
+   SECTION NAVIGATION
+========================= */
+
+function showSection(section){
+
+    const sections = [
+        "birthday",
+        "memories",
+        "letter",
+        "final"
+    ];
+
+    sections.forEach(id => {
+
+        document.getElementById(id)
+            .style.display = "none";
+
+    });
+
+    document.getElementById(section)
+        .style.display = "flex";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================
+   TYPING EFFECT
+========================= */
+
+function startTyping(){
+
+    const text =
+    "Terima kasih telah menjadi alasan mengapa rumah selalu terasa seperti rumah. Hari ini adalah hari untuk merayakan kalian. ❤️";
+
+    const element =
+        document.getElementById("typing");
+
+    let index = 0;
+
+    function type(){
+
+        if(index < text.length){
+
+            element.innerHTML +=
+                text.charAt(index);
+
+            index++;
+
+            setTimeout(type, 45);
+
+        }
+
+    }
+
+    type();
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function startConfetti(){
+
+    for(let i = 0; i < 120; i++){
+
+        const confetti =
+            document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.background =
+            randomColor();
+
+        confetti.style.animationDuration =
+            (Math.random() * 3 + 2) + "s";
+
+        confetti.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        confetti.style.transform =
+            `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 6000);
+
+    }
+
+}
+
+
+function randomColor(){
+
+    const colors = [
+        "#ffd166",
+        "#ef476f",
+        "#06d6a0",
+        "#118ab2",
+        "#ffffff"
+    ];
+
+    return colors[
+        Math.floor(
+            Math.random() * colors.length
+        )
+    ];
+
+}
+
+</script>
+
+</body>
+</html>
+```
